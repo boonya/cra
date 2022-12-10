@@ -1,0 +1,25 @@
+name: Publishing storybook 🎨
+
+on:
+  push:
+    branches-ignore:
+      - storybook
+
+jobs:
+  publish:
+    name: Checkout, build & publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+      - run: npm ci
+      - run: npm run storybook:build
+      - run: echo "TARGET=docs/$GITHUB_REF_NAME" >> $GITHUB_ENV
+      - uses: JamesIves/github-pages-deploy-action@v4.4.0
+        with:
+          branch: storybook
+          folder: storybook-static
+          target-folder: ${{ env.TARGET }}
+          git-config-name: github-pages-deploy-action
