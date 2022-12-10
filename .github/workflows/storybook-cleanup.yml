@@ -13,7 +13,10 @@ jobs:
         with:
           ref: storybook
       - run: echo "TARGET=docs/${{ github.event.ref }}" >> $GITHUB_ENV
-      - run: rm -rf ${{ env.TARGET }}
+      - run: |
+          rm -rf ${{ env.TARGET }}
+          SANITIZED_REF_NAME=$(printf '%s\n' "${{ github.event.ref }}" | sed -e 's/[\/&]/\\&/g')
+          sed -i "/\[${SANITIZED_REF_NAME}\]/d" docs/index.md
       - uses: JamesIves/github-pages-deploy-action@v4.4.0
         with:
           branch: storybook

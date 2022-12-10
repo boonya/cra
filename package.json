@@ -15,7 +15,7 @@
     "test": "jest .",
     "test:ci": "jest --coverage --coverageReporters=text --verbose",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook:build": "build-storybook"
   },
   "dependencies": {
     "@babel/runtime": "^7.20.6",
