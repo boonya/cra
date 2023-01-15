@@ -1,4 +1,5 @@
 import {initialize, mswDecorator} from 'msw-storybook-addon';
+import withRouter from '@sb/decorators/withRouter';
 
 // Initialize MSW
 initialize({
@@ -7,6 +8,12 @@ initialize({
 });
 
 export const decorators = [
+	(Story, {parameters}) => (
+		<div style={parameters.style}>
+			<Story />
+		</div>
+	),
+	withRouter(),
 	mswDecorator,
 ];
 

@@ -4,6 +4,7 @@ import {
 } from '@testing-library/react';
 import mediaQuery from 'css-mediaquery';
 import DecoratorsReducer from '@test/DecoratorsReducer';
+import Router from '@test/Router';
 
 /**
  * @param {number} width
@@ -22,6 +23,7 @@ function createMatchMedia(width) {
  * @property {number} [windowWidth]
  * @property {JSX.Element} [wrapper]
  * @property {JSX.Element[]} [decorators]
+ * @property {import('@test/Router').RouterProps} [router]
  *
  * @param {WrapperOptions} [options]
  * @returns {Function}
@@ -31,6 +33,7 @@ function createWrapper(options = {}) {
 		windowWidth = 1280,
 		wrapper: CustomWrapper = ({children}) => children,
 		decorators = [],
+		router,
 	} = options;
 
 	function Wrapper({children}) {
@@ -38,11 +41,13 @@ function createWrapper(options = {}) {
 		window.matchMedia = createMatchMedia(windowWidth);
 
 		return (
-			<CustomWrapper>
-				<DecoratorsReducer decorators={decorators}>
-					{children}
-				</DecoratorsReducer>
-			</CustomWrapper>
+			<Router {...router}>
+				<CustomWrapper>
+					<DecoratorsReducer decorators={decorators}>
+						{children}
+					</DecoratorsReducer>
+				</CustomWrapper>
+			</Router>
 		);
 	}
 

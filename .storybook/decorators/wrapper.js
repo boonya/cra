@@ -1,4 +1,3 @@
-export default function wrapper(props, component) {
-	const Component = component || 'div';
+export default function wrapper(props, Component = 'div') {
 	return (Story) => <Component {...props}><Story /></Component>;
 }
