@@ -25,7 +25,8 @@ jobs:
       - run: npm ci
       - name: "Prepare variables"
         run: |
-          echo "APP_PREFIX=/backendless-apollo-client/${GITHUB_REF_NAME}" >> $GITHUB_ENV
+          ROOT_DIR=`echo ${GITHUB_REPOSITORY} | sed -e "s/^${GITHUB_REPOSITORY_OWNER}\///"`
+          echo "APP_PREFIX=/${ROOT_DIR}/${GITHUB_REF_NAME}" >> $GITHUB_ENV
           echo "STORYBOOK_STATIC_TARGET=/${GH_PAGES_FOLDER}/${GITHUB_REF_NAME}" >> $GITHUB_ENV
       - run: APP_PREFIX=${APP_PREFIX} npm run storybook:build
       - uses: JamesIves/github-pages-deploy-action@v4.4.1
