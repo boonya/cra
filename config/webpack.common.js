@@ -43,13 +43,13 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.css$/u,
-				use: 'css-loader',
-			},
-			{
 				test: /\.(?:js|mjs)$/u,
 				exclude: /node_modules/u,
 				loader: 'babel-loader',
+			},
+			{
+				test: /\.css$/u,
+				use: ['style-loader', 'css-loader'],
 			},
 		],
 	},

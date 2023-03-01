@@ -17,6 +17,9 @@ module.exports = {
 	coverageDirectory: './coverage',
 	// A list of reporter names that Jest uses when writing coverage reports
 	coverageReporters: ['text-summary', 'html'],
+	transform: {
+		'\\.js$': 'babel-jest',
+	},
 	transformIgnorePatterns: [
 		'/node_modules/',
 		'\\.pnp\\.[^\\/]+$',

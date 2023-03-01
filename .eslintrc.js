@@ -63,6 +63,15 @@ module.exports = {
 			},
 		},
 		{
+			files: [
+				'config/env.js',
+				'test/setup/*',
+			],
+			rules: {
+				'node/no-process-env': 'off',
+			},
+		},
+		{
 			files: ['test/**/*.js'],
 			rules: {
 				'import/no-unassigned-import': 'off',
@@ -70,7 +79,7 @@ module.exports = {
 		},
 		{
 			files: [
-				'**/*.stories.*',
+				'**/*.stories.js',
 				'**/*.test.js',
 				'.storybook/**',
 				'test/**',
@@ -95,6 +104,17 @@ module.exports = {
 			rules: {
 				'node/no-missing-import': 'off',
 				'node/no-missing-require': 'off',
+			},
+		},
+		{
+			files: [
+				'src/**/__response__/**.js',
+				'src/**/__data__/**.js',
+			],
+			rules: {
+				'max-len': 'off',
+				camelcase: 'off',
+				'babel/camelcase': 'off',
 			},
 		},
 	],

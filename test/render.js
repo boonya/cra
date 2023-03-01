@@ -88,9 +88,8 @@ export function renderComponent(component, options = {}) {
  */
 export function renderHook(hook, options = {}) {
 	const {wrapper, original} = extractOptions(options);
-	const {result} = originalRenderHook(hook, {
+	return originalRenderHook(hook, {
 		wrapper: createWrapper(wrapper),
 		...original,
 	});
-	return result;
 }
