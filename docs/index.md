@@ -1,3 +1,3 @@
 | Storybook for a branch, tag or release name | File tree |
 | ---------------------------                 | --------- |
-| [main](https://boonya.github.io/cra/main) | [`4204888cfb5457508c930231645e1bf4c23ea7f6`](https://github.com/boonya/cra/tree/4204888cfb5457508c930231645e1bf4c23ea7f6) |
+| [main](https://boonya.github.io/cra/main) | [`cba5c958345e65666bf5fe593ae0b68cbe1395bf`](https://github.com/boonya/cra/tree/cba5c958345e65666bf5fe593ae0b68cbe1395bf) |
