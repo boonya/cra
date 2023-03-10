@@ -4,10 +4,8 @@ on:
   workflow_call:
   pull_request:
   push:
-    branches-ignore:
-      - docs
-    paths-ignore:
-      - "**.md"
+    branches:
+      - main
 
 jobs:
   linting:

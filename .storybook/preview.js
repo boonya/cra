@@ -1,20 +1,11 @@
-import {initialize, mswDecorator} from 'msw-storybook-addon';
 import withRouter from '@sb/decorators/withRouter';
-
-// Initialize MSW
-initialize({
-	serviceWorker: {url: `${APP_PREFIX}mockServiceWorker.js`},
-	onUnhandledRequest: 'bypass',
-});
+import withStyle from '@sb/decorators/withStyle';
+import withTheme, {getThemeToolbar} from '@sb/decorators/withTheme';
 
 export const decorators = [
-	(Story, {parameters}) => (
-		<div style={parameters.style}>
-			<Story />
-		</div>
-	),
+	withStyle(),
+	withTheme(),
 	withRouter(),
-	mswDecorator,
 ];
 
 export const parameters = {
@@ -25,4 +16,9 @@ export const parameters = {
 			date: /(?:date|dateTime|time)$/iu,
 		},
 	},
+	backgrounds: {disable: true},
+};
+
+export const globalTypes = {
+	theme: getThemeToolbar(),
 };

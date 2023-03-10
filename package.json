@@ -5,14 +5,14 @@
   "author": "Serhii <boonya> Buinytskyi",
   "license": "MIT",
   "engines": {
-    "node": ">=16 <=18",
-    "npm": ">=8 <=9"
+    "node": "~18.14",
+    "npm": "~9.5"
   },
   "scripts": {
     "start": "webpack serve --config config/webpack.start.js",
     "build": "webpack --config config/webpack.build.js",
     "lint": "eslint . .storybook",
-    "test": "jest .",
+    "test": "jest",
     "test:ci": "jest --coverage --coverageReporters=text --verbose",
     "storybook": "start-storybook -p 6006",
     "storybook:test": "test-storybook",
@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.21.0",
+    "lodash.omit": "^4.5.0",
+    "lodash.pick": "^4.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^1.3.0",

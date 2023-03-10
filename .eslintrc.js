@@ -50,12 +50,6 @@ module.exports = {
 	},
 	overrides: [
 		{
-			files: ['src/**'],
-			rules: {
-				'jsx-a11y/accessible-emoji': 'warn',
-			},
-		},
-		{
 			files: ['.storybook/public/mockServiceWorker.js'],
 			rules: {
 				'eslint-comments/disable-enable-pair': 'off',
