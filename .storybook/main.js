@@ -20,6 +20,10 @@ module.exports = {
 		'@storybook/addon-interactions',
 		'@storybook/addon-a11y',
 	],
+	framework: {
+		name: '@storybook/react-webpack5',
+		options: {},
+	},
 	staticDirs: [{
 		from: '../public/',
 		to: '/',
@@ -27,10 +31,6 @@ module.exports = {
 		from: './public/',
 		to: '/',
 	}],
-	framework: '@storybook/react',
-	core: {
-		builder: '@storybook/builder-webpack5',
-	},
 	webpackFinal: ({module, ...config}) => {
 		return {
 			...config,
