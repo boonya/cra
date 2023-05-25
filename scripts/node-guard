@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+const pkg = require('../package.json');
+const semver = require('semver');
+
+const current = process.version;
+const supported = pkg.engines.node;
+
+if (!semver.satisfies(current, supported)) {
+	const message = [
+		`You are using node version ${semver.valid(current)}.`,
+		`Supported node version is ${semver.valid(semver.minVersion(supported))} or newer.`,
+	].join('\n');
+	throw new RangeError(message);
+}
