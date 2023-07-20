@@ -2,3 +2,4 @@
 | ---------------------------                 | --------- |
 | [main](https://boonya.github.io/cra/main) | [`c99286445272432302e3f46906c46bf04cdd2cd9`](https://github.com/boonya/cra/tree/c99286445272432302e3f46906c46bf04cdd2cd9) |
 | [dependabot/npm_and_yarn/tough-cookie-4.1.3](https://boonya.github.io/cra/dependabot/npm_and_yarn/tough-cookie-4.1.3) | [``](https://github.com/boonya/cra/tree/) |
+| [dependabot/npm_and_yarn/word-wrap-1.2.4](https://boonya.github.io/cra/dependabot/npm_and_yarn/word-wrap-1.2.4) | [``](https://github.com/boonya/cra/tree/) |
